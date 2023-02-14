@@ -1,0 +1,39 @@
+---
+title: "Buttons"
+layout: "../../layouts/Layout.astro"
+---
+import Button from '../../components/Button.svelte'
+
+import '../../styles/markdown.scss'
+
+# Custom Button Svelte Component
+
+This is a custom button component for Svelte applications that allows you to have primary and secondary styles for your buttons.
+
+## Props
+
+- `primary` (boolean, optional): If set, the button will use the primary style.
+- `secondary` (boolean, optional): If set, the button will use the secondary style.
+
+## Events
+
+- `on:click`: Emitted when the button is clicked.
+
+## Slots
+
+- Default slot: Use this slot to set the button's content (text, icons, etc.).
+
+## Usage
+
+<div class="preview">
+    <Button primary>Primary</Button>
+    <Button secondary>Secondary</Button>
+</div>
+
+
+```js
+import CustomButton from './CustomButton.svelte';
+
+<Button primary>Primary</Button>
+<Button secondary>Secondary</Button>
+```

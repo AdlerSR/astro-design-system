@@ -1,0 +1,89 @@
+---
+import { SIDEBAR } from "../config";
+
+const currentPageMatch = new URL(Astro.request.url).pathname.slice(1);
+
+const { style } = Astro.props;
+
+const isCurrentPage = (link: string) => {
+    if (link) {
+        return link.includes(currentPageMatch);
+    }
+    return false;
+};
+---
+
+<aside style={style}>
+    <nav>
+        <ul>
+            {
+                SIDEBAR.map((item) =>
+                    item.header ? (
+                        <h2>{item.text}</h2>
+                    ) : (
+                        <li
+                            class={
+                                isCurrentPage(item.link as string)
+                                    ? "current"
+                                    : ""
+                            }
+                        >
+                            <a href={item.link}>{item.text}</a>
+                        </li>
+                    )
+                )
+            }
+        </ul>
+    </nav>
+</aside>
+
+<style lang="scss">
+    :global(*) {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    *,
+    body,
+    button,
+    input {
+        font-family: "Roboto", sans-serif;
+        outline: none;
+    }
+
+    aside {
+        grid-column: var(--columns);
+        display: flex;
+        margin-left: auto;
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            list-style-type: none;
+
+            h2 {
+                color: #1f1235;
+                margin-bottom: 10px;
+            }
+
+            li {
+                padding: 5px 20px;
+                border-left: solid 1px #bdd5ea;
+
+                &.current {
+                    border-left: solid 2px #1b1425;
+                    a {
+                        color: #1b1425;
+                        font-weight: 700;
+                    }
+                }
+
+                a {
+                    text-decoration: none;
+                    color: #1b1425;
+                }
+            }
+        }
+    }
+</style>

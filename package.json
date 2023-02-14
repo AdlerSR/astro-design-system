@@ -1,0 +1,25 @@
+{
+  "name": "astro",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "devDependencies": {
+    "astro": "^2.1.7",
+    "sass": "^1.60.0"
+  },
+  "keywords": [],
+  "description": "The official Astro Cloud Sandbox Template by the CodeSandbox team",
+  "dependencies": {
+    "@astrojs/mdx": "^0.18.2",
+    "@astrojs/svelte": "^2.1.0",
+    "@fontsource/roboto": "^4.5.8",
+    "svelte": "^3.57.0"
+  }
+}

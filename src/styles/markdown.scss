@@ -1,0 +1,62 @@
+h1,
+h2,
+h3 {
+  margin-bottom: 10px;
+}
+
+p {
+  & + h2 {
+    margin-top: 25px;
+  }
+
+  & + h3 {
+    margin-top: 25px;
+  }
+}
+
+ul {
+  & + h2 {
+    margin-top: 25px;
+  }
+
+  & + h3 {
+    margin-top: 25px;
+  }
+}
+
+.preview {
+  padding: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  background-image: url(/grid_dot.svg);
+  background-repeat: repeat;
+  background-size: 1.5rem;
+  border-radius: 0.33rem;
+  resize: both;
+  margin-bottom: 10px;
+  border: 2px solid #e2e8f0;
+}
+
+.astro-code {
+  padding: 1rem;
+  border-radius: 0.44rem;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+
+  /* Handle */
+  &::-webkit-scrollbar-thumb {
+    background: #79c0ff;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  &::-webkit-scrollbar-thumb:hover {
+    background: #53aeff;
+  }
+}
